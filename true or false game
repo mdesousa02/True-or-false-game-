@@ -1,0 +1,47 @@
+ public static void main(String[] args) {
+
+
+        // to represent the values of the char values
+        String[] questions = new String[]{
+         "he longest distance swam underwater in one breath is 200metres.",
+         "The record for most needles inserted into the head is 15,000.",
+                "The heaviest aircraft pulled by a single man weighed 188.83 tonnes and was pulled 8.8 metres.",
+          "The record for the fastest time to solve a Rubik’s Cube one-handed is 37 seconds."
+
+        };
+        //storing our answers
+        boolean[] answers = new boolean[]{
+         true,
+         false,
+         true,
+         false
+
+        };
+        // to say how many answers the user is going to input
+        boolean[] userAnswers = new boolean[5];
+        // declaring what the current full score is
+        int finalScore = 0;
+         // to obtain user inputed data
+        Scanner scanner = new Scanner(System.in);
+         //If the variable i which is 0 is smaller than 5 it will add one number and also making a loop
+        for (int i = 0; i < 5; i++) {
+            // It will print out what the question is and ask if its true and false
+            System.out.println("\nQuestion " + (i+1) + ": " + questions[i] + ". True or False?");
+            System.out.print("Your answer: ");
+            // once the user inputs a answer it will move onto the next question
+            userAnswers[i] = scanner.nextBoolean();
+            //if the users answer is the same as the pre set answer it will print out correct and make the final score go up by one
+            if (userAnswers[i] == answers[i]) {
+                System.out.println("Correct!");
+                finalScore++;
+            }
+            // if you get the answer wrong it will print out wrong and then the answer
+            else {
+                System.out.println("Wrong. It's " + answers[i] + ".");
+            }
+
+        }
+        // gathers what your final score was and tell you what you got out of 5
+        System.out.println("\nYour final score is " + finalScore + " out of 5.");
+    }
+}
